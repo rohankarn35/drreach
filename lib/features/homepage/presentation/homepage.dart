@@ -1,6 +1,9 @@
+import 'package:drreach/core/common/heading_group.dart';
+import 'package:drreach/features/homepage/presentation/widgets/doctor%20speciality/card_list.dart';
 import 'package:drreach/features/homepage/presentation/widgets/location_and_notifications/location.dart';
 import 'package:drreach/features/homepage/presentation/widgets/location_and_notifications/notifications_logo.dart';
 import 'package:drreach/features/homepage/presentation/widgets/searchbar/searchbar.dart';
+import 'package:drreach/features/homepage/presentation/widgets/upcoming_schedule/doctor_card.dart';
 import 'package:drreach/features/homepage/presentation/widgets/upcoming_schedule/schedule.dart';
 import 'package:drreach/features/homepage/presentation/widgets/upcoming_schedule/schudule_doctor_card.dart';
 import 'package:flutter/material.dart';
@@ -21,10 +24,9 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.only(
           left: 15,
           right: 15,
-        
+          // bottom: 8,
         ),
         child: Column(
-         
           children: [
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.07,
@@ -44,7 +46,7 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-              ScheduleGroup(), 
+                ScheduleGroup(),
                 Text(
                   "See All  ",
                   style: TextStyle(
@@ -52,10 +54,18 @@ class _HomePageState extends State<HomePage> {
                   ),
                 )
               ],
-            ), 
-            SizedBox(height: 8,),
-            ScheduleDoctorWidget(), 
-           
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            DoctorCard(),
+            SizedBox(
+              height: 8,
+            ),
+            HeadingGroup(
+              headingText: "Doctor Speciality",
+            ),
+            CardList()
           ],
         ),
       ),

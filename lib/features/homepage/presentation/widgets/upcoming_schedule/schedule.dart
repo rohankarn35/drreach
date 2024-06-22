@@ -5,11 +5,12 @@ class ScheduleGroup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   Row(
+    return Row(
       children: [
+        // subheadingText("Upcoming Schedule"),
         const Text(
-          " Upcoming Schedule",
-          style: TextStyle(
+          "Upcoming Schedule",
+          style: const TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w500,
           ),
